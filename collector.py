@@ -33,8 +33,7 @@ def getWordList():
 	return words
 
 def writeToFile(filename):
-	f = open(filename, 'w')
-	f.write("\n".join(getWordList()))
-	f.close()
+	with open(filename, 'w') as f:
+		f.write("\n".join(getWordList()))
 
 writeToFile("words.txt")
